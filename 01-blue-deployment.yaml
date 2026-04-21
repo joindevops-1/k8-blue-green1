@@ -26,6 +26,9 @@ spec:
         image: robotshop/rs-catalogue:v1
         ports:
         - containerPort: 8080
+        env:
+        - name: MONGO_URL
+          value: "mongodb://mongodb:27017/catalogue"
         resources:
           requests:
             cpu: "100m"
