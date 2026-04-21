@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: sample
-        image: joindevops/sample:v2
+        image: joindevops/sample:0.0.2
         ports:
         - containerPort: 80
         resources:
