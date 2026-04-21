@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalogue-blue
+  name: catalogue-green
   namespace: roboshop
   labels:
-    app: catalogue
-    version: blue
+    purpose: blue-green
+    project: roboshop
+    color: green
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: catalogue
-      version: blue
+      purpose: blue-green
+      project: roboshop
+      color: green
   template:
     metadata:
       labels:
-        app: catalogue
-        version: blue
+        purpose: blue-green
+        project: roboshop
+        color: green
     spec:
       containers:
       - name: catalogue
-        image: robotshop/rs-catalogue:v1
+        image: robotshop/rs-catalogue:v2   # new version under test
         ports:
         - containerPort: 8080
-        env:
-        - name: MONGO_URL
-          value: "mongodb://mongodb:27017/catalogue"
         resources:
           requests:
             cpu: "100m"

@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: catalogue
+  name: catalogue-preview
   namespace: roboshop
 spec:
   selector:
-    app: catalogue
-    version: blue    # switch to "green" to cut over traffic
+    purpose: blue-green
+    project: roboshop
+    color: green         # always points to green for QA testing
   ports:
   - protocol: TCP
     port: 8080
