@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: sample
 spec:
+  type: LoadBalancer
   selector:
     purpose: blue-green
     project: sample
